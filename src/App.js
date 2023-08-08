@@ -19,8 +19,8 @@ function App() {
   return (
     <div>
       <Banner />
-      <Buttons />
-      <Table />
+      <Buttons displaySats={displaySats} filterByType={filterByType} />
+      <Table sat={sat}/>
     </div>
   );
   }
