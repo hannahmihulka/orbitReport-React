@@ -6,11 +6,11 @@ import satData from './components/satData';
 
 
 function App() {
-  const [sat, setSat] = useState(satData);
+  let [sat, setSat] = useState(satData);
   let displaySats = [...new Set(satData.map((data) => data.orbitType))];
 
-  const filterByType = (currentType) => {
-    const filteredSats = satData.filter((newSatDisplay) => {
+  let filterByType = (currentType) => {
+    let filteredSats = satData.filter((newSatDisplay) => {
       return newSatDisplay.orbitType === currentType;
     });
     setSat(filteredSats);
@@ -19,7 +19,7 @@ function App() {
   return (
     <div>
       <Banner />
-      <Buttons displaySats={displaySats} filterByType={filterByType} />
+      <Buttons displaySats={displaySats} filterByType={filterByType} setSat={setSat} />
       <Table sat={sat}/>
     </div>
   );
